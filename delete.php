@@ -1,6 +1,6 @@
 <?php include "component/header.php" ?>
 
-<h2>Delete en bruger</h2>
+<h2>Delete din bruger</h2>
 
 <?php 
 
@@ -16,18 +16,20 @@ include "component/variabler.php";
   }
 
 ?>
-
-<?php echo $user['username'] ?>
-<br>
-<?php echo $user['email'] ?>
-<br>
-<?php echo $user['userPassword'] ?>
-
-<form method="POST" style="display:grid; width: 10%;">
-    <input type="submit" name="submit" value="delete" />
+<p>Username:
+    <?php echo $user['username'] ?>
+</p>
+<p>Email:
+    <?php echo $user['email'] ?>
+</p>
+<p>Password:
+    <?php echo $user['userPassword'] ?>
+</p>
+<form method="POST">
+    <input type="submit" class="btn_red" name="submit" value="Delete" />
 </form>
 
-<button><a href="index.php">fortryd</a></button>
+<a href="index.php"><button class="btn_green">Fortryd</button></a>
 
 
 

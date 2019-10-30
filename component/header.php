@@ -11,3 +11,4 @@
 
 <body>
     <?php include "db-connect.php" ?>
+    <div class="container">

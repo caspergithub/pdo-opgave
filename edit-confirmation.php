@@ -4,8 +4,20 @@ $pdo = new PDO($dsn, $user, $passwd, $options);
 
 include "component/variabler.php";
 ?>
-<h2>du har ændret følgende brugernavn: <?php echo $user['username'] ?> og email til <?php echo $user['email'] ?> og dit
-    nye password er <?php echo $user['userPassword'] ?></h2>
+<h2>Dine oplysninger er ændret til</h2>
+Brugernavn:
+<div class='users'>
+    <?php echo $user['username'] ?>
+</div>
+Email:
+<div class='users'>
+    <?php echo $user['email'] ?>
+</div>
+Password:
+<div class='users'>
+    <?php echo $user['userPassword'] ?>
+</div>
 
-<a href="index.php">Tilbage til forsiden</a>
+<a href="index.php"><button class="btn_green">Tilbage til forsiden</button></a>
+
 <?php include "component/footer.php";?>

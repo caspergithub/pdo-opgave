@@ -1,1 +1,558 @@
-/* No CSS */
+@charset "UTF-8";
+/**
+ * Tech College : Beautiful Form
+ * Last update: 10/6/2019
+ * Author: Kræn Byskov kraenbyskov@gmail.com
+ *
+ */
+/* ==========================================================================
+   Import
+   ========================================================================== */
+/* Color */
+/* ==========================================================================
+   color mixing
+   ========================================================================== */
+/* Green */
+/* Black */
+/* Gradient */
+/**
+* Building a Linear-gradient Mixin in Sass
+* December 02, 2014, By Hugo Giraudel
+* https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+*/
+/* Keyframe */
+/* ==========================================================================
+   Keyfram mixing
+   ========================================================================== */
+/* Media Query */
+/* Shadow */
+/* ==========================================================================
+    Material Design Shadow from google.
+   ========================================================================== */
+/* Transition */
+/* ==========================================================================
+   Transition
+   ========================================================================== */
+/* @include transition(all,2s,ease-out); */
+/* Typografi */
+/* ==========================================================================
+   Typografi
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+* {
+  color: #181818;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.45px;
+  -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
+  text-shadow: #fff 0px 1px 1px;
+}
+
+/* ==========================================================================
+   Gradient - How to use 
+   
+   @include linear-gradient(#31B7D7, #EDAC7D);
+   
+   @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+   
+   @include linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+
+   KeyFrames – How to use it 
+
+   @keyframes Name {
+   0%   {top: -200px;}
+   100%   {top: 200px;}
+   }
+
+
+   Media Query - How to use it 
+
+   @include respond-between(xs, sm) {
+
+   }
+
+   Transition - How to use it
+
+   @include transition;
+   @include transition(all, 0.35s, cubic-bezier(.35, 0, .1, 1));
+   
+
+   Content
+   ========================================================================== */
+body {
+  background: #4e57c4;
+  background: linear-gradient(42deg, #4e57c4 0%, #c44e7f 50%, #934ec4 100%);
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* The size of the form in % */
+/* Container full size */
+/* container padding full size */
+/* input border full size */
+p,
+i,
+a,
+button,
+label,
+input,
+input::-webkit-input-placeholder {
+  font-size: 13px;
+  text-decoration: none;
+}
+p,
+i,
+a,
+button,
+label,
+input,
+input:-ms-input-placeholder {
+  font-size: 13px;
+  text-decoration: none;
+}
+p,
+i,
+a,
+button,
+label,
+input,
+input::-ms-input-placeholder {
+  font-size: 13px;
+  text-decoration: none;
+}
+p,
+i,
+a,
+button,
+label,
+input,
+input::placeholder {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+p {
+  text-align: center;
+}
+
+h2 {
+  font-size: 19px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Container
+   ========================================================================== */
+.container {
+  width: 500px;
+  height: auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  margin: 10% auto;
+  position: relative;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* ==========================================================================
+   Input fields
+   ========================================================================== */
+input,
+button,
+.users {
+  display: block;
+  width: 468px;
+  padding: 15px;
+  border: 2px solid #f1f1f1;
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  margin: 10px auto;
+  /* focus field  */
+  /* Submit field  */
+}
+
+input a,
+button a,
+.users a {
+  text-decoration: none;
+}
+
+input[type=email]:focus, input[type=email]:hover, input[type=text]:focus, input[type=text]:hover,
+button[type=email]:focus,
+button[type=email]:hover,
+button[type=text]:focus,
+button[type=text]:hover,
+.users[type=email]:focus,
+.users[type=email]:hover,
+.users[type=text]:focus,
+.users[type=text]:hover {
+  border: 2px solid #9bdeac;
+  outline: none;
+}
+
+input[type=button]:focus, input[type=button]:hover,
+button[type=button]:focus,
+button[type=button]:hover,
+.users[type=button]:focus,
+.users[type=button]:hover {
+  border: 2px solid transparent;
+  outline: none;
+}
+
+input[type=button],
+button[type=button],
+.users[type=button] {
+  display: inline-block;
+  width: 235px;
+  margin: 0px;
+  padding: 15px;
+  border: 0px;
+  border: 2px solid transparent;
+  text-shadow: transparent 0px 1px 1px;
+}
+
+input[type=button]:nth-last-child(1),
+button[type=button]:nth-last-child(1),
+.users[type=button]:nth-last-child(1) {
+  margin-left: 26px;
+  background-color: #4ec46c;
+  color: white;
+}
+
+input[type=button]:nth-last-child(1):hover,
+button[type=button]:nth-last-child(1):hover,
+.users[type=button]:nth-last-child(1):hover {
+  background-color: #74d18c;
+  cursor: pointer;
+}
+
+input[type=button]:nth-last-child(2),
+button[type=button]:nth-last-child(2),
+.users[type=button]:nth-last-child(2) {
+  background: transparent;
+}
+
+input[type=button].button_block,
+button[type=button].button_block,
+.users[type=button].button_block {
+  background-color: #FF4F4F;
+}
+
+input[type=button].button_block:hover,
+button[type=button].button_block:hover,
+.users[type=button].button_block:hover {
+  background-color: #FF4F4F;
+}
+
+.users-container {
+  width: 100%;
+}
+
+.users-container .users {
+  font-size: 12px;
+  width: 358px;
+  display: inline-block;
+}
+
+.users-container .edit-button,
+.users-container .delete-button {
+  font-size: 12px;
+  padding: 15px;
+  border: 2px solid #f1f1f1;
+  border-radius: 6px;
+  margin-left: 10px;
+  color: white;
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+}
+
+.users-container .edit-button {
+  background: #58e058;
+}
+
+.users-container .edit-button:hover {
+  border: 2px solid #58e058;
+  background: #2dd82d;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.users-container .delete-button {
+  background: #f94a4a;
+}
+
+.users-container .delete-button:hover {
+  border: 2px solid #f94a4a;
+  background: #f71919;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn_red {
+  background: #f94a4a;
+  color: white;
+  text-transform: uppercase;
+}
+
+.btn_red:hover {
+  border: 2px solid #f94a4a;
+  background: #f71919;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn_green {
+  text-transform: uppercase;
+  background: #58e058;
+  color: white;
+  text-decoration: none;
+}
+
+.btn_green:hover {
+  border: 2px solid #58e058;
+  background: #2dd82d;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wrong[type=email], .wrong[type=email]:focus, .wrong[type=email]:hover, .wrong[type=text], .wrong[type=text]:focus, .wrong[type=text]:hover {
+  border: 2px solid #ffb5b5;
+  outline: none;
+  color: #ffb5b5;
+}
+
+.wrong[type=text]::-webkit-input-placeholder {
+  color: #ffb5b5;
+}
+
+.wrong[type=text]:-ms-input-placeholder {
+  color: #ffb5b5;
+}
+
+.wrong[type=text]::-ms-input-placeholder {
+  color: #ffb5b5;
+}
+
+.wrong[type=text]::placeholder {
+  color: #ffb5b5;
+}
+
+form p {
+  display: inline-block;
+}
+
+.info {
+  display: inline-block;
+  background-color: #ff8282;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  border-radius: 50%;
+  margin-top: 13px;
+  margin-left: 6px;
+}
+
+.info:hover {
+  cursor: pointer;
+}
+
+.info:hover .information {
+  display: inline-block;
+  opacity: 1;
+}
+
+.info p {
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 10.83333px;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+}
+
+.info .information {
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  position: absolute;
+  background-color: #323232;
+  border-radius: 5px;
+  width: auto;
+  left: 20px;
+  padding: 10px;
+  display: none;
+  opacity: 0;
+}
+
+.info .information p {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 150px;
+  left: auto;
+  top: auto;
+  margin: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+
+/* ==========================================================================
+   Submit button
+   ========================================================================== */
+.input_submit {
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   Back button
+   ========================================================================== */
+.input_back {
+  position: relative;
+  width: 235px;
+  display: inline-block;
+}
+
+.input_back input {
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+}
+
+.input_back i {
+  position: absolute;
+  top: 17px;
+  left: 20%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  color: #181818;
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+}
+
+.input_back:hover input {
+  cursor: pointer;
+}
+
+.input_back:hover input[type=submit] {
+  border: 2px solid #181818;
+  background: #181818;
+  color: white;
+}
+
+.input_back:hover i {
+  color: white;
+  left: 15%;
+}
+
+/* ==========================================================================
+   Icons for the input field
+   ========================================================================== */
+.input_icon {
+  position: relative;
+}
+
+.input_icon i {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  color: #181818;
+}
+
+/* ==========================================================================
+   Credit card Information
+   ========================================================================== */
+.input_expire,
+.input_secure {
+  width: 247px;
+  display: inline-block;
+}
+
+.input_expire input,
+.input_secure input {
+  width: 218px;
+}
+
+.input_expire input {
+  width: 198px;
+}
+
+/* ==========================================================================
+    Gender field
+   ========================================================================== */
+.input_gender {
+  position: relative;
+}
+
+.input_gender li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  height: 13px;
+}
+
+.input_gender li label {
+  display: block;
+  font-size: 13px;
+  padding-left: 46.15385px;
+  height: 13px;
+  cursor: pointer;
+}
+
+.input_gender li .check,
+.input_gender li .check::before {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.input_gender li .check {
+  border: 2px solid #d7d7d7;
+  height: 13px;
+  width: 13px;
+  top: 50%;
+  left: 20%;
+}
+
+.input_gender li .check::before {
+  content: '';
+  height: 6.5px;
+  width: 6.5px;
+  top: 50%;
+  left: 50%;
+}
+
+.input_gender li input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  height: 13px;
+  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+  transition: all 0.35s cubic-bezier(0.35, 0, 0.1, 1);
+}
+
+.input_gender li input[type=radio]:checked ~ label {
+  color: #4ec46c;
+}
+
+.input_gender li input[type=radio]:checked ~ label .check {
+  border: 2px solid #4ec46c;
+}
+
+.input_gender li input[type=radio]:checked ~ label .check::before {
+  background: #4ec46c;
+}
+
+.input_gender li input[type=radio]:hover ~ label .check {
+  border: 2px solid #4ec46c;
+}

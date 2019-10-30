@@ -1,4 +1,5 @@
 <?php include "component/header.php" ?>
+<h2>Ændre bruger indstillinger</h2>
 <?php
     $pdo = new PDO($dsn, $user, $passwd, $options);
     
@@ -21,12 +22,16 @@
     };
 ?>
 
-<form method="POST" style="display:grid; width: 10%;">
+<form method="POST">
+    Brugernavn:
     <input name="username" value="<?php echo $user['username'] ?>" type="text" />
+    Email:
     <input name="email" value="<?php echo $user['email'] ?>" type="text" />
+    Password:
     <input name="userPassword" value="<?php echo $user['userPassword'] ?>" type="text" />
-    <input type="submit" value="Skift" />
+    <input class="btn_green" type="submit" value="Skift" />
 </form>
+<a href="index.php"><button class="btn_red">Fortryd</button></a>
 
 
 <?php include "component/footer.php";?>

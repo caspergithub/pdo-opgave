@@ -1,6 +1,8 @@
 <?php include "component/header.php" ?>
 
-<h2>alt information om alle brugere</h2>
+<h2>Alt information om alle brugere</h2>
+
+
 
 <?php
 
@@ -14,12 +16,17 @@ $pdo = new PDO($dsn, $user, $passwd, $options);
     $res = $pdo->query('SELECT * FROM Users'); // en * vælger alt 
     $data = $res->fetchAll(); // fetch som associative array
     foreach ($data as $row) {
-        echo $row['username']." ".$row['email']." ".$row['userPassword']." ". "<a href='edit.php?userID=".$row['ID']."'>Edit</a>"." " . "<a href='delete.php?userID=".$row['ID']."'>delete</a>". "<br>";
+        echo "<div class='users-container'>";
+        echo "<div class='users'>";
+        echo "<strong>U | </strong>".$row['username']." <strong>E | </strong> ".$row['email']." <strong>P | </strong> ".$row['userPassword'];
+        echo "</div>";
+        echo "<a class='edit-button' href='edit.php?userID=".$row['ID']."'>+</a>";
+        echo "<a class='delete-button' href='delete.php?userID=".$row['ID']."'>x</a>";
+        echo "</div>";
     }
 
 ?>
 
-<a href="create.php">Tilføje ny bruger</a>
-
+<a href="create.php"><button class="btn_green">Tilføje ny bruger</button></a>
 
 <?php include "component/footer.php" ?>

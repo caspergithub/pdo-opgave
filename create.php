@@ -3,6 +3,8 @@ include "component/header.php";
 
 $pdo = new PDO($dsn, $user, $passwd, $options);
 
+
+
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['pass'];
@@ -47,8 +49,11 @@ if (isset($_POST['submit'])) {
     <input type="text" required name="username" id="name" placeholder="Username">
     <input type="text" required name="email" id="email" placeholder="E-mail">
     <input type="text" required name="pass" id="pass" placeholder="password">
-    <input type="submit" value="Send" name="submit">
+    <input type="submit" class="btn_green" value="Send" name="submit">
 </form>
+<a href="index.php"><button class="btn_red">Fortryd</button></a>
+
+
 
 
 <?php include "component/footer.php";?>
