@@ -10,3 +10,4 @@
 </head>
 
 <body>
+    <?php include "db-connect.php" ?>
