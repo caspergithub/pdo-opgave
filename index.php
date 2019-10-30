@@ -1,4 +1,7 @@
 <?php include "component/header.php" ?>
+
+<h2>alt information om alle brugere</h2>
+
 <?php
 
 
@@ -8,14 +11,15 @@ $pdo = new PDO($dsn, $user, $passwd, $options);
 
 // QUERY function + view kode
 
-    echo "<h2>All info on all users</h2>";
     $res = $pdo->query('SELECT * FROM Users'); // en * vælger alt 
     $data = $res->fetchAll(); // fetch som associative array
     foreach ($data as $row) {
-        echo $row['username']." ".$row['email']." ".$row['password']." ". "<a href='edit.php?userID=".$row['ID']."'>Edit</a>". "<br>";
+        echo $row['username']." ".$row['email']." ".$row['userPassword']." ". "<a href='edit.php?userID=".$row['ID']."'>Edit</a>"." " . "<a href='delete.php?userID=".$row['ID']."'>delete</a>". "<br>";
     }
 
 ?>
+
+<a href="create.php">Tilføje ny bruger</a>
 
 
 <?php include "component/footer.php" ?>

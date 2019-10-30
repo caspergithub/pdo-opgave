@@ -1,4 +1,7 @@
-<?php include "header.php" ?>
+<?php include "component/header.php" ?>
 
 
-<?php include "footer.php" ?>
+<h2>tillykke du har slettet denne konto</h2>
+<a href="index.php">tilbage til forsiden</a>
+
+<?php include "component/footer.php" ?>
