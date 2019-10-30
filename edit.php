@@ -2,20 +2,11 @@
 <?php
     $pdo = new PDO($dsn, $user, $passwd, $options);
     
-    if($pdo){
-        // get id from
-      $id=$_GET["userID"];
-      $stmt = $pdo->query('SELECT * FROM users WHERE id='.$id);
-      $user = $stmt->fetch();
-      }
-
+    include "component/variabler.php";
 
         // HVIS DE 3 INPUTS ER INDTASTET
     if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['userPassword'])) 
     {  
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $userPassword = $_POST['userPassword'];
         // HER SÆTTER VI VARIABLERNE TIL AT VÆRE DET VI MODTAGER I INPUTS'NE
         
         $sql = "UPDATE users SET username = :username, email= :email, userPassword = :userPassword WHERE id = :ID";
@@ -23,8 +14,6 @@
     
         $statement = $pdo->prepare($sql);
         $statement->execute(array(':username' => $username, ':email' => $email, ':userPassword' => $userPassword, ':ID' => $id));
-       
-        echo "Bruger-id'et: ".$username." fik ændret sin alder til: ".$userPassword." og sin by til: ".$email;
 
         header("Location:edit-confirmation.php?userID=".$id."");
 

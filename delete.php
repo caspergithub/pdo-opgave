@@ -7,13 +7,7 @@
 $pdo = new PDO($dsn, $user, $passwd, $options);
     
 
-if($pdo){
-    // get id from
-  $id=$_GET["userID"];
-  $stmt = $pdo->query('SELECT * FROM users WHERE id='.$id);
-  $user = $stmt->fetch();
-  }
-
+include "component/variabler.php";
 
   if(isset($_POST["submit"])) {
     $query = "DELETE FROM users WHERE id = $id";

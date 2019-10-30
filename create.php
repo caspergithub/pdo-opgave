@@ -3,12 +3,12 @@ include "component/header.php";
 
 $pdo = new PDO($dsn, $user, $passwd, $options);
 
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['pass'];
 //tjekker om knappen er blevet trykket.
 if (isset($_POST['submit'])) {
     // henter data fra formen, og laver en variable med dens værdi.
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
 
     // query string med named placeholders.
     $check = "SELECT username FROM users WHERE username = :username";
